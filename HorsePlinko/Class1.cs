@@ -47,13 +47,7 @@ namespace Plinko
             var ball = GameObject.CreatePrimitive(PrimitiveType.Sphere);
             ball.transform.position = pos;
             ball.transform.localScale = Vector3.one * radius;
-
-            Renderer ballRend = ball.GetComponent<Renderer>();
-
-            if (ballRend != null)
-                ballRend.material = new Material(uberShader);
-            else
-                ball.AddComponent<Renderer>().material = new Material(uberShader);
+            ball.GetComponent<Renderer>().material = new Material(uberShader);
 
             ball.AddComponent<Rigidbody>();
 
